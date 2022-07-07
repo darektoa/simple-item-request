@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('stuffs', function (Blueprint $table) {
             $table->id();
+            $table->varchar('code', 10);
+            $table->string('name', 100);
+            $table->bigInteger('stock')->default(0);
+            $table->smallInteger('unit')->default(1);
+            $table->smallInteger('status')->default(1);
             $table->timestamps();
         });
     }
