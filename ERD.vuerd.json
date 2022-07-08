@@ -3,9 +3,9 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -390,
-    "scrollLeft": -195,
-    "zoomLevel": 0.8,
+    "scrollTop": -430,
+    "scrollLeft": -183,
+    "zoomLevel": 1,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -18,7 +18,7 @@
       "relationship": true
     },
     "database": "MySQL",
-    "databaseName": "simple-",
+    "databaseName": "",
     "canvasType": "ERD",
     "language": "GraphQL",
     "tableCase": "pascalCase",
@@ -636,7 +636,7 @@
         "id": "dbb1bd12-a8a2-41ac-84fb-2cc5812d0c73"
       },
       {
-        "name": "stuff_request_stuff",
+        "name": "stuff_stuff_request",
         "comment": "",
         "columns": [
           {
@@ -779,10 +779,10 @@
           }
         ],
         "ui": {
-          "active": false,
+          "active": true,
           "left": 568.5,
           "top": 751.25,
-          "zIndex": 173,
+          "zIndex": 182,
           "widthName": 108.48193359375,
           "widthComment": 60
         },
