@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('stuff_stuff_request', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('stuff_id')->constrained();
+            $table->foreignId('stuff_request_id')->constrained();
+            $table->bigInteger('quantity');
             $table->timestamps();
         });
     }
