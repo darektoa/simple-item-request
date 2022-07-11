@@ -40,4 +40,13 @@ class Stuff extends Model
             get: $get
         );
     }
+
+
+    public function unitName() : Attribute {
+        $get = fn() => $this->unitNames[$this->unit] ?? 'Unknown';
+
+        return Attribute::make(
+            get: $get
+        );
+    }
 }
