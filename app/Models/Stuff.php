@@ -21,6 +21,12 @@ class Stuff extends Model
         3 => 'Empty'
     ];
 
+    public $unitNames = [
+        1 => 'Pcs',
+        2 => 'Box',
+        3 => 'Pack',
+    ];
+
 
     public function requests() :BelongsToMany {
         return $this->belongsToMany(StuffRequest::class);
