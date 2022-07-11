@@ -12,6 +12,12 @@ class Stuff extends Model
 
     protected $guarded = ['id'];
 
+    public $statusNames = [
+        1 => 'Active',
+        2 => 'Inactive',
+        3 => 'Empty'
+    ];
+
 
     public function requests() :BelongsToMany {
         return $this->belongsToMany(StuffRequest::class);
