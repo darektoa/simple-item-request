@@ -11,6 +11,8 @@ class Stuff extends Model
 {
     use HasFactory;
 
+    protected $appends = ['status_name'];
+
     protected $guarded = ['id'];
 
     public $statusNames = [
