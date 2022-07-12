@@ -3,9 +3,9 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -430,
-    "scrollLeft": -183,
-    "zoomLevel": 1,
+    "scrollTop": -280,
+    "scrollLeft": -151,
+    "zoomLevel": 0.8,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -137,13 +137,36 @@
               "widthDefault": 60
             },
             "id": "4b624a5e-2b4a-49a0-a5d5-d35aef2cbfd8"
+          },
+          {
+            "name": "deleted_at",
+            "comment": "",
+            "dataType": "TIMESTAMP",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 62.7216796875,
+              "widthComment": 60,
+              "widthDataType": 76.87060546875,
+              "widthDefault": 60
+            },
+            "id": "1c1d2ced-6d40-4eb9-9e22-8b7dc845cf09"
           }
         ],
         "ui": {
-          "active": false,
+          "active": true,
           "left": 71,
           "top": 131,
-          "zIndex": 30,
+          "zIndex": 183,
           "widthName": 81.49169921875,
           "widthComment": 60
         },
@@ -779,7 +802,7 @@
           }
         ],
         "ui": {
-          "active": true,
+          "active": false,
           "left": 568.5,
           "top": 751.25,
           "zIndex": 182,
@@ -807,7 +830,7 @@
             "3e6ecfb3-cac7-47f7-9140-a02a5bd85f07"
           ],
           "x": 460.01220703125,
-          "y": 206.5,
+          "y": 216.75,
           "direction": "right"
         },
         "end": {
