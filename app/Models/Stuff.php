@@ -6,10 +6,11 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Stuff extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $appends = ['status_name', 'unit_name'];
 
