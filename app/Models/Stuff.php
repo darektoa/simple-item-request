@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Str;
 
 class Stuff extends Model
 {
@@ -27,6 +28,18 @@ class Stuff extends Model
         2 => 'Box',
         3 => 'Pack',
     ];
+
+
+    protected static function boot() {
+        parent::creating(function($data) {
+            if($data->code) return;
+
+            $id = Stuff::latest()->first()->id + 1;
+            $data->code = 'ATK' . Str::padLeft($id, 3, '0');
+        });
+
+        parent::boot();
+    }
 
 
     public function requests() :BelongsToMany {
