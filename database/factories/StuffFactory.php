@@ -16,8 +16,12 @@ class StuffFactory extends Factory
      */
     public function definition()
     {
+        $faker = fake('id_ID');
+
         return [
-            //
+            'name'  => $faker->word(),
+            'stock' => rand(100, 1000),
+            'unit'  => rand(1, 3)
         ];
     }
 }
