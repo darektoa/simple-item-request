@@ -15,6 +15,6 @@ class StuffSeeder extends Seeder
      */
     public function run()
     {
-        Stuff::factory(10);
+        Stuff::factory(10)->create();
     }
 }
