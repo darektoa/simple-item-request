@@ -34,7 +34,7 @@ class Stuff extends Model
         parent::creating(function($data) {
             if($data->code) return;
 
-            $id = Stuff::latest()->first()->id + 1;
+            $id = (Stuff::orderByDesc('id')->first()->id ?? 0) + 1;
             $data->code = 'ATK' . Str::padLeft($id, 3, '0');
         });
 
