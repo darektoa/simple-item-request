@@ -2,6 +2,9 @@
 @section('title', 'Item List')
 @section('content')
     <h1>Item List</h1>
+
+    {{ $stuffs->onEachSide(4)->links() }}
+
     <table class="table">
         <thead>
           <tr>
@@ -12,10 +15,14 @@
           </tr>
         </thead>
         <tbody>
-
             @foreach ($stuffs as $stuff)
+            @php 
+                $page    = $stuffs->currentPage()-1;
+                $perPage = $stuffs->perPage();
+                $number  = $loop->iteration + ($page * $perPage);
+            @endphp
             <tr>
-              <th scope="row">{{ $loop->iteration }}</th>
+              <th scope="row">{{ $number }}</th>
               <td>{{ $stuff->name }}</td>
               <td>{{ $stuff->stock }}</td>
               <td>{{ $stuff->unitName }}</td>
@@ -23,5 +30,5 @@
             @endforeach
 
         </tbody>
-      </table>
+    </table>
 @endsection
