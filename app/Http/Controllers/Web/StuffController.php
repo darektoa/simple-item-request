@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class StuffController extends Controller
 {
     public function index() {
-        $stuffs = Stuff::all();
+        $stuffs = Stuff::paginate(5);
 
         return view('pages.stuff.index', compact('stuffs'));
     }
