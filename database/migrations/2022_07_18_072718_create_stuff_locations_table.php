@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('stuff_locations', function (Blueprint $table) {
             $table->id();
+            $table->string('code', 10);
+            $table->string('name', 100);
             $table->timestamps();
         });
     }
