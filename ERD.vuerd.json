@@ -3,9 +3,9 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -332,
-    "scrollLeft": -461,
-    "zoomLevel": 0.5,
+    "scrollTop": -342,
+    "scrollLeft": -141,
+    "zoomLevel": 0.8,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -401,6 +401,29 @@
             "id": "531f9199-ab6f-40a2-9324-d52bfdbb406d"
           },
           {
+            "name": "stuff_location_id",
+            "comment": "",
+            "dataType": "BIGINT(20)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 95.716796875,
+              "widthComment": 60,
+              "widthDataType": 68.45361328125,
+              "widthDefault": 60
+            },
+            "id": "e1817ab1-2ba3-4560-8229-df9afacfa17d"
+          },
+          {
             "name": "code",
             "comment": "",
             "dataType": "VARCHAR(10)",
@@ -583,36 +606,13 @@
               "widthDefault": 60
             },
             "id": "94f340ea-fc34-4379-b859-0bd6e39c592d"
-          },
-          {
-            "name": "stuff_location_id",
-            "comment": "",
-            "dataType": "BIGINT(20)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": true,
-              "pfk": false,
-              "widthName": 95.716796875,
-              "widthComment": 60,
-              "widthDataType": 68.45361328125,
-              "widthDefault": 60
-            },
-            "id": "e1817ab1-2ba3-4560-8229-df9afacfa17d"
           }
         ],
         "ui": {
-          "active": false,
+          "active": true,
           "left": 570.1395,
           "top": 375.1378,
-          "zIndex": 228,
+          "zIndex": 234,
           "widthName": 60,
           "widthComment": 60
         },
@@ -1025,7 +1025,7 @@
           }
         ],
         "ui": {
-          "active": true,
+          "active": false,
           "left": 71.1119,
           "top": 416.8077,
           "zIndex": 233,
