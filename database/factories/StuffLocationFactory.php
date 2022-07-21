@@ -16,8 +16,10 @@ class StuffLocationFactory extends Factory
      */
     public function definition()
     {
+        $faker = fake('id_ID');
+
         return [
-            //
+            'name'  => $faker->streetAddress(),
         ];
     }
 }
