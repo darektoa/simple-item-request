@@ -43,7 +43,7 @@ class Stuff extends Model
 
 
     public function location() :BelongsTo {
-        return $this->belongsTo(StuffLocation::class);
+        return $this->belongsTo(StuffLocation::class, 'stuff_location_id');
     }
 
 
