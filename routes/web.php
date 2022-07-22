@@ -7,4 +7,5 @@ Route::redirect('/', '/stuffs');
 
 Route::prefix('/stuffs')->group(function() {
     Route::get('/', [StuffController::class, 'index']);
+    Route::get('/requests', [StuffRequestController::class, 'index']);
 });
