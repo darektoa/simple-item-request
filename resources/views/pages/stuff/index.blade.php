@@ -10,8 +10,9 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
-            <th scope="col">Tersedia</th>
-            <th scope="col">Satuan</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Unit</th>
+            <th scope="col">Location</th>
           </tr>
         </thead>
         <tbody>
@@ -26,6 +27,7 @@
               <td>{{ $stuff->name }}</td>
               <td>{{ $stuff->stock }}</td>
               <td>{{ $stuff->unitName }}</td>
+              <td>{{ $stuff->location->code }} | {{ $stuff->location->name }}</td>
             </tr>
             @endforeach
 
