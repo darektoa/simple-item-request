@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\StuffLocation;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -19,9 +20,10 @@ class StuffFactory extends Factory
         $faker = fake('id_ID');
 
         return [
-            'name'  => $faker->realText(10),
-            'stock' => rand(100, 1000),
-            'unit'  => rand(1, 3)
+            'stuff_location_id' => StuffLocation::inRandomOrder()->first()->id,
+            'name'              => $faker->realText(10),
+            'stock'             => rand(100, 1000),
+            'unit'              => rand(1, 3)
         ];
     }
 }
