@@ -2,12 +2,12 @@
 @section('title', 'Request List')
 @section('content')
     <h1 class="mb-5">Add Request</h1>
-
-    <form>
+    <form method="POST" action="{{ route('stuffs.requests.store') }}">
+        @csrf
         <div class="row mb-5">
             <div class="col-4">
                 <label for="receiver-nik" class="form-label">NIK</label>
-                <select class="form-control" id="receiver-nik" name="receiver-nik">
+                <select class="form-control" id="receiver-nik" name="receiver_id">
                     
                     @foreach ($users as $user)
                     <option value="{{ $user->id }}"> {{ $user->nik }} </option>
@@ -48,7 +48,7 @@
                     <tr id="stuff-1" class="stuff">
                         <th class="stuff-number align-middle" scope="row">1</th>
                         <td class="align-middle">
-                            <select class="stuff-id form-control" name="stuffs[]['id']" style="width: 16rem">
+                            <select class="stuff-id form-control" name="stuffs[0][id]" style="width: 16rem">
                                 
                                 @foreach ($stuffs as $stuff)
                                 <option value="{{ $stuff->id }}"> {{ $stuff->code }} | {{ $stuff->name }} </option>
@@ -58,9 +58,9 @@
                         </td>
                         <td class="align-middle"><input type="text" class="stuff-location form-control" readonly></td>
                         <td class="align-middle"><input type="number" class="stuff-stock form-control" readonly></td>
-                        <td class="align-middle"><input type="number" class="stuff-quantity form-control" name="stuffs[]['quantity']"></td>
+                        <td class="align-middle"><input type="number" class="stuff-quantity form-control" name="stuffs[0][quantity]" value="1"></td>
                         <td class="align-middle"><input type="text" class="stuff-unit form-control" readonly></td>
-                        <td class="align-middle"><input type="text" class="stuff-description form-control" name="stuffs[]['description']"></td>
+                        <td class="align-middle"><input type="text" class="stuff-description form-control" name="stuffs[0][description]"></td>
                         <td class="align-middle"><input type="text" class="stuff-status form-control" readonly></td>
                         <td class="align-middle"><button type="button" class="stuff-delete-button btn btn-danger" data-id="stuff-1">x</button></td>
                     </tr>
@@ -125,6 +125,9 @@
                 elmnt.stock.value       = stuff.stock;
                 elmnt.unit.value        = stuff.unit_name;
                 elmnt.location.value    = stuff.location.code;
+                elmnt.id.name           = `stuffs[${index}][id]`;
+                elmnt.quantity.name     = `stuffs[${index}][quantity]`;
+                elmnt.description.name  = `stuffs[${index}][description]`;
 
                 if(stuff.stock >= elmnt.quantity.value) elmnt.status.value = 'Available';
                 else elmnt.status.value = 'Inavailable';
