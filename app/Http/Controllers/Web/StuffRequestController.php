@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use App\Models\{Stuff, StuffRequest, User};
+use Exception;
 use Illuminate\Http\Request;
 
 class StuffRequestController extends Controller
@@ -21,5 +22,29 @@ class StuffRequestController extends Controller
         $users  = User::with(['departement'])->get();
 
         return view('pages.stuff-request.create', compact('stuffs', 'users'));
+    }
+
+
+    public function store(Request $request) {
+        try{
+            $this->validate($request, [
+                'receiver_id'       => 'required|exists:users,id',
+                'stuffs'            => 'required|array',
+                'stuffs.*.id'       => 'required|exists:stuffs,id',
+                'stuffs.*.quantity' => 'required|numeric|min:1',
+            ]);
+
+            $stuffs = collect($request->stuffs)
+                ->mapWithKeys(fn($item) => [
+                    $item['id'] => ['quantity' => $item['quantity']]
+                ]);
+
+            $stuffRequest = StuffRequest::create(['user_id' => 1]); // Example User
+            $stuffRequest->stuffs()->attach($stuffs->toArray());
+
+            return redirect()->route('stuffs.requests.index');
+        }catch(Exception $err){
+            return back()->withInput();
+        }
     }
 }
