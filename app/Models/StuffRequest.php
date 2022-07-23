@@ -19,6 +19,7 @@ class StuffRequest extends Model
 
 
     public function stuffs() :BelongsToMany {
-        return $this->belongsToMany(Stuff::class);
+        return $this->belongsToMany(Stuff::class)
+            ->withPivot('quantity');
     }
 }
